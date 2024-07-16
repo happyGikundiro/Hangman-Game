@@ -1,40 +1,67 @@
 
-  <div class="p-5 space-y-16">
-    <div class="flex justify-between items-center">
-    <div class="flex gap-3 items-center">
-        <button  class="bg-gradient-to-b from-[#FE71FE] to-[#7199FF] w-8 h-8 flex justify-center items-center rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" fill="none" viewBox="0 0 38 32"><path fill="#fff" d="M0 0h38v7H0zM0 13h38v6H0zM0 25h38v7H0z"/></svg>
-        </button>
-      <h1 class="text-xl text-white">Countries</h1>
-    </div>
+   <div class="p-5 space-y-16 relative" [ngClass]="{'hidden-content': gameOver || gameStatus === 'Paused'}">
 
-      <div>
-        <div class="bar"></div>
-      <button class="text-white text-xl ">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="none" viewBox="0 0 54 50"><path fill="url(#a)" d="m26.667 49.467-3.867-3.52C9.067 33.493 0 25.253 0 15.2 0 6.96 6.453.533 14.667.533c4.64 0 9.093 2.16 12 5.547 2.906-3.387 7.36-5.547 12-5.547C46.88.533 53.333 6.96 53.333 15.2c0 10.053-9.066 18.293-22.8 30.747l-3.866 3.52Z"/><defs><linearGradient id="a" x1="26.667" x2="26.667" y1="8.567" y2="49.467" gradientUnits="userSpaceOnUse"><stop stop-color="#FE71FE"/><stop offset="1" stop-color="#7199FF"/></linearGradient></defs></svg>
-      </button>
+    <div class="flex justify-between items-center"> 
+      <div class="flex gap-3 items-center">
+        <button class="bg-gradient-to-b from-[#FE71FE] to-[#7199FF] w-8 h-8 flex justify-center items-center rounded-full" (click)="pauseGame()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" fill="none" viewBox="0 0 38 32">
+            <path fill="#fff" d="M0 0h38v7H0zM0 13h38v6H0zM0 25h38v7H0z"/>
+          </svg>
+        </button>
+        <h1 class="text-xl text-white">{{ selectedCategory }}</h1>
+      </div>
+
+      <div class="flex justify-center gap-2 items-center">
+        <div class="w-20 bg-[#FFFFFF] dark:bg-[#3B4D66] rounded-lg overflow-hidden h-3 mt-3 p-[3px]">
+          <div class="bg-darknavy  h-full rounded-md" [style.width.%]="progressBarWidth"></div>
+        </div>
+  
+        <button class="text-white text-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" fill="none" viewBox="0 0 54 50">
+            <path fill="url(#a)" d="m26.667 49.467-3.867-3.52C9.067 33.493 0 25.253 0 15.2 0 6.96 6.453.533 14.667.533c4.64 0 9.093 2.16 12 5.547 2.906-3.387 7.36-5.547 12-5.547C46.88.533 53.333 6.96 53.333 15.2c0 10.053-9.066 18.293-22.8 30.747l-3.866 3.52Z"/>
+            <defs>
+              <linearGradient id="a" x1="26.667" x2="26.667" y1="8.567" y2="49.467" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FE71FE"/>
+                <stop offset="1" stop-color="#7199FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  
+    <div class="mt-8 mb-4 space-x-2 flex flex-wrap">
+      <div *ngFor="let char of displayedWord.split(' ')" class="py-4 px-3 bg-blue text-white rounded-[8px] mb-2">
+        {{ char }}
       </div>
     </div>
-
-    <div class="mt-8 mb-4 space-x-2 flex flex-wrap">
-      <div class="py-4 px-3  bg-blue text-white rounded-[8px] disabled:bg-[#cbd3ff]">U</div>
-      <div class="py-4 px-3 bg-blue text-white rounded-[8px] disabled:bg-[#cbd3ff]">N</div>
-      <div class="py-4 px-3 bg-blue text-white rounded-[8px] disabled:bg-[#cbd3ff]">I</div>
-      <div class="py-4 px-3 bg-blue text-white rounded-[8px] disabled:bg-[#cbd3ff]">D</div>
-      <div class="py-4 px-3 bg-blue text-white rounded-[8px] disabled:bg-[#cbd3ff]">O</div>
-    </div>
-
+  
     <div class="grid grid-cols-9 gap-2">
-        <button 
-        *ngFor="let letter of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')" 
-        (click)="guess(letter)" 
+      <button
+        *ngFor="let letter of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')"
+        (click)="guess(letter)"
         class="py-4 bg-white text-darknavy rounded-[8px] disabled:bg-[#cbd3ff]"
         [disabled]="guesses.includes(letter) || remainingGuesses === 0"
       >
         {{ letter }}
       </button>
     </div>
-
+  
   </div>
+
   
+  <div *ngIf="gameOver || gameStatus === 'Paused'" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+    <div class="relative pb-5 bg-gradient-to-b from-[#344ABA] to-[#001479] w-[320px] px-10 pt-20 rounded-[32px] mx-auto">
+      <div class="absolute top-[-60px]">
+        <h2 class="text-[80px] text-transparent pl-5 bg-clip-text bg-gradient-to-b from-[#67B6FF] to-[#FFFFFF]">{{ gameStatus }}</h2>
+      </div>
   
+      <div *ngIf="gameOver || gameStatus === 'Paused'" class="text-center space-y-6">
+        <button (click)="playAgain()" class="text-white bg-blue py-1 px-10 rounded-full text">CONTINUE</button>
+        <button (click)="newCategory()" class="text-white bg-blue py-1 px-12 rounded-full text">NEW CATEGORY</button>
+        <button (click)="quit()" class="text-white bg-gradient-to-b from-[#FE71FE] to-[#7199FF] py-1 px-10 rounded-full">QUIT GAME</button>
+      </div>
+
+    </div>
+  </div>
