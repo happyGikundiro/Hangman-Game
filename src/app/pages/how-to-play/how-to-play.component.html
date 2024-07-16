@@ -1,0 +1,22 @@
+
+<div class="p-5 space-y-16">
+    <div class="flex justify-between items-center">
+        <button (click)="gobackToHome()" class="bg-gradient-to-b from-[#FE71FE] to-[#7199FF] w-10 h-10 flex justify-center items-center rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19" fill="none" viewBox="0 0 41 39"><path fill="#fff" d="M0 19.5 19.02.5v12.244C26.348 12.744 41 17.896 41 38.5c0-11.147-14.653-13.37-21.98-13.089V38.5L0 19.5Z"/></svg>
+        </button>
+        <div>
+            <p class="text-4xl text-transparent bg-clip-text bg-gradient-to-b from-[#67B6FF] to-[#FFFFFF]">How to Play</p>
+        </div>
+    </div>
+     
+    <div class="space-y-4">
+    <div *ngFor="let instruction of instructions" class="bg-white rounded-[18px] p-5 space-y-3">
+        <div class="flex gap-3">
+            <p class="text-blue">{{instruction.instructionNumber}}</p>
+            <p class="text-darknavy">{{instruction.title.toUpperCase()}}</p>
+        </div>
+        <p class="text-[#887DC0]">{{instruction.description}}</p>
+    </div>
+    </div>
+
+</div>

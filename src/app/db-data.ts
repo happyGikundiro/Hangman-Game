@@ -1,70 +1,78 @@
-const categories = {
-    "categories": {
-        "Movies": [
-            {"name": "The Godfather", "selected": false},
-            {"name": "Titanic", "selected": false},
-            {"name": "Inception", "selected": false},
-            {"name": "Gladiator", "selected": false},
-            {"name": "Casablanca", "selected": false},
-            {"name": "Psycho", "selected": false},
-            {"name": "Avatar", "selected": false},
-            {"name": "Jaws", "selected": false},
-            {"name": "Frozen", "selected": false},
-            {"name": "The Matrix", "selected": false},
-            {"name": "Goodfellas", "selected": false},
-            {"name": "Braveheart", "selected": false},
-            {"name": "Fight Club", "selected": false},
-            {"name": "Pulp Fiction", "selected": false},
-            {"name": "Forrest Gump", "selected": false},
-            {"name": "The Lion King", "selected": false},
-            {"name": "Back to the Future", "selected": false},
-            {"name": "Jurassic Park", "selected": false},
-            {"name": "Blade Runner", "selected": false},
-            {"name": "Star Wars", "selected": false},
-            {"name": "The Dark Knight", "selected": false},
-            {"name": "The Big Lebowski", "selected": false},
-            {"name": "The Wizard of Oz", "selected": false},
-            {"name": "Schindler's List", "selected": false},
-            {"name": "Toy Story", "selected": false},
-            {"name": "The Silence of the Lambs", "selected": false},
-            {"name": "Alien", "selected": false},
-            {"name": "Interstellar", "selected": false},
-            {"name": "Raiders of the Lost Ark", "selected": false},
-            {"name": "La La Land", "selected": false}
-        ],
-        "TV Shows": [
-            {"name": "Breaking Bad", "selected": false},
-            {"name": "South Park", "selected": false},
-            {"name": "Game of Thrones", "selected": false},
-            {"name": "Stranger Things", "selected": false},
-            {"name": "The Sopranos", "selected": false},
-            {"name": "Friends", "selected": false},
-            {"name": "The Office", "selected": false},
-            {"name": "Sherlock", "selected": false},
-            {"name": "Black Mirror", "selected": false},
-            {"name": "The Crown", "selected": false},
-            {"name": "Westworld", "selected": false},
-            {"name": "Better Call Saul", "selected": false},
-            {"name": "Orange Is the New Black", "selected": false},
-            {"name": "The Simpsons", "selected": false},
-            {"name": "Arrested Development", "selected": false},
-            {"name": "Succession", "selected": false},
-            {"name": "Fargo", "selected": false},
-            {"name": "Mad Men", "selected": false},
-            {"name": "The West Wing", "selected": false},
-            {"name": "Dexter", "selected": false},
-            {"name": "Rick and Morty", "selected": false},
-            {"name": "Lost", "selected": false},
-            {"name": "Doctor Who", "selected": false},
-            {"name": "The Walking Dead", "selected": false},
-            {"name": "Peaky Blinders", "selected": false},
-            {"name": "Buffy the Vampire Slayer", "selected": false},
-            {"name": "The Big Bang Theory", "selected": false},
-            {"name": "Curb Your Enthusiasm", "selected": false},
-            {"name": "Ted Lasso", "selected": false},
-            {"name": "True Detective", "selected": false}
-        ],
-        "Countries": [
+
+export const CATEGORIES = [
+    {
+      "category": "Movies",
+      "items": [
+        {"name": "The Godfather", "selected": false},
+        {"name": "Titanic", "selected": false},
+        {"name": "Inception", "selected": false},
+        {"name": "Gladiator", "selected": false},
+        {"name": "Casablanca", "selected": false},
+        {"name": "Psycho", "selected": false},
+        {"name": "Avatar", "selected": false},
+        {"name": "Jaws", "selected": false},
+        {"name": "Frozen", "selected": false},
+        {"name": "The Matrix", "selected": false},
+        {"name": "Goodfellas", "selected": false},
+        {"name": "Braveheart", "selected": false},
+        {"name": "Fight Club", "selected": false},
+        {"name": "Pulp Fiction", "selected": false},
+        {"name": "Forrest Gump", "selected": false},
+        {"name": "The Lion King", "selected": false},
+        {"name": "Back to the Future", "selected": false},
+        {"name": "Jurassic Park", "selected": false},
+        {"name": "Blade Runner", "selected": false},
+        {"name": "Star Wars", "selected": false},
+        {"name": "The Dark Knight", "selected": false},
+        {"name": "The Big Lebowski", "selected": false},
+        {"name": "The Wizard of Oz", "selected": false},
+        {"name": "Schindler's List", "selected": false},
+        {"name": "Toy Story", "selected": false},
+        {"name": "The Silence of the Lambs", "selected": false},
+        {"name": "Alien", "selected": false},
+        {"name": "Interstellar", "selected": false},
+        {"name": "Raiders of the Lost Ark", "selected": false},
+        {"name": "La La Land", "selected": false}
+      ]
+    },
+    {
+      "category": "TV Shows",
+      "items": [
+        {"name": "Breaking Bad", "selected": false},
+        {"name": "South Park", "selected": false},
+        {"name": "Game of Thrones", "selected": false},
+        {"name": "Stranger Things", "selected": false},
+        {"name": "The Sopranos", "selected": false},
+        {"name": "Friends", "selected": false},
+        {"name": "The Office", "selected": false},
+        {"name": "Sherlock", "selected": false},
+        {"name": "Black Mirror", "selected": false},
+        {"name": "The Crown", "selected": false},
+        {"name": "Westworld", "selected": false},
+        {"name": "Better Call Saul", "selected": false},
+        {"name": "Orange Is the New Black", "selected": false},
+        {"name": "The Simpsons", "selected": false},
+        {"name": "Arrested Development", "selected": false},
+        {"name": "Succession", "selected": false},
+        {"name": "Fargo", "selected": false},
+        {"name": "Mad Men", "selected": false},
+        {"name": "The West Wing", "selected": false},
+        {"name": "Dexter", "selected": false},
+        {"name": "Rick and Morty", "selected": false},
+        {"name": "Lost", "selected": false},
+        {"name": "Doctor Who", "selected": false},
+        {"name": "The Walking Dead", "selected": false},
+        {"name": "Peaky Blinders", "selected": false},
+        {"name": "Buffy the Vampire Slayer", "selected": false},
+        {"name": "The Big Bang Theory", "selected": false},
+        {"name": "Curb Your Enthusiasm", "selected": false},
+        {"name": "Ted Lasso", "selected": false},
+        {"name": "True Detective", "selected": false}
+      ]
+    },
+    {
+        "category":"Countries",
+        "items": [
             {"name": "Australia", "selected": false},
             {"name": "Brazil", "selected": false},
             {"name": "Canada", "selected": false},
@@ -95,8 +103,11 @@ const categories = {
             {"name": "Argentina", "selected": false},
             {"name": "Belgium", "selected": false},
             {"name": "Chile", "selected": false}
-        ],
-        "Capital Cities": [
+        ]
+    },
+    {
+        "category":"Capital Cities",
+        "items": [
             {"name": "Tokyo", "selected": false},
             {"name": "Paris", "selected": false},
             {"name": "London", "selected": false},
@@ -127,8 +138,11 @@ const categories = {
             {"name": "Budapest", "selected": false},
             {"name": "Warsaw", "selected": false},
             {"name": "Amsterdam", "selected": false}
-        ],
-        "Animals": [
+        ]
+    },
+    {
+        "category":"Animals",
+        "items": [
             {"name": "Elephant", "selected": false},
             {"name": "Lion", "selected": false},
             {"name": "Giraffe", "selected": false},
@@ -159,8 +173,11 @@ const categories = {
             {"name": "Octopus", "selected": false},
             {"name": "Turtle", "selected": false},
             {"name": "Snake", "selected": false}
-        ],
-        "Sports": [
+        ]
+    },
+    {
+        "category":"Sports",
+        "items": [
             {"name": "Soccer", "selected": false},
             {"name": "Basketball", "selected": false},
             {"name": "Tennis", "selected": false},
@@ -192,5 +209,6 @@ const categories = {
             {"name": "Triathlon", "selected": false},
             {"name": "American Football", "selected": false}
         ]
-    }
-}
+    },
+  ];
+  

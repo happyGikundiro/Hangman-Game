@@ -3,10 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CategorySelectionComponent } from './components/category-selection/category-selection.component';
+import { GamePausedComponent } from './components/game-paused/game-paused.component';
+import { GameWonComponent } from './components/game-won/game-won.component';
+import { GameFailedComponent } from './components/game-failed/game-failed.component';
+import { GamePlayComponent } from './components/game-play/game-play.component';
+import { HomeComponent } from './pages/home/home.component';
+import { HowToPlayComponent } from './pages/how-to-play/how-to-play.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CategorySelectionComponent,
+    GamePausedComponent,
+    GameWonComponent,
+    GameFailedComponent,
+    GamePlayComponent,
+    HomeComponent,
+    HowToPlayComponent
   ],
   imports: [
     BrowserModule,
