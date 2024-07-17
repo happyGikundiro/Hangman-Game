@@ -1,11 +1,11 @@
 
-  <div class="p-5 space-y-16 lg:pt-20">
-    <div class="flex justify-between items-center lg:px-40">
+  <div class="p-5 space-y-16 lg:pt-20 bg-gradient-customs min-h-screen ">
+    <div class="flex justify-between items-center lg:px-40 md:justify-normal md:gap-10 lg:gap-80">
         <button (click)="gobackToHome()" class="bg-gradient-to-b from-[#FE71FE] to-[#7199FF] w-10 h-10 flex justify-center items-center rounded-full">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19" fill="none" viewBox="0 0 41 39"><path fill="#fff" d="M0 19.5 19.02.5v12.244C26.348 12.744 41 17.896 41 38.5c0-11.147-14.653-13.37-21.98-13.089V38.5L0 19.5Z"/></svg>
         </button>
         <div>
-            <p class="text-4xl text-transparent bg-clip-text bg-gradient-to-b from-[#67B6FF] to-[#FFFFFF]">Pick a Category</p>
+            <p class="text-4xl lg:text-[50px] py-2 text-transparent bg-clip-text bg-gradient-to-b from-[#67B6FF] to-[#FFFFFF]">Pick a Category</p>
         </div>
     </div>
 
@@ -13,7 +13,7 @@
       <button 
         *ngFor="let category of categories " 
         (click)="selectCategory(category.category)" 
-        class="py-2 px-4 bg-blue-500 text-white bg-blue  rounded-[18px] hover:bg-blue-600 md:py-6"
+        class="py-4 lg:py-8 text-white bg-blue hover:bg-[#7199FF] border-none shadow-custom-button-shadow rounded-[12px] text-md lg:text-xl hover:bg-blue-600 md:py-6"
       >
         {{ category.category.toUpperCase() }}
       </button>

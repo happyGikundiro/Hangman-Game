@@ -15,7 +15,7 @@ export class GamePlayComponent implements OnInit {
   wordToGuess: string = '';
   displayedWord: string = '';
   guesses: string[] = [];
-  maxGuesses: number = 6;
+  maxGuesses: number = 8;
   remainingGuesses!: number;
   progressBarWidth: number = 100;
 
@@ -41,11 +41,31 @@ export class GamePlayComponent implements OnInit {
     if (categoryWords) {
       const randomIndex = Math.floor(Math.random() * categoryWords.length);
       this.wordToGuess = categoryWords[randomIndex].name.toUpperCase();
-      this.displayedWord = ' '.repeat(this.wordToGuess.length);
-      console.log('nn',this.wordToGuess)
       this.remainingGuesses = this.maxGuesses;
       this.guesses = [];
-      this.updateProgressBar(); 
+
+      this.displayedWord = ' '.repeat(this.wordToGuess.length);
+      console.log('don',this.wordToGuess)
+
+      this.fillRandomLetters();
+
+      this.updateProgressBar();
+    }
+  }
+
+  fillRandomLetters(): void {
+    const lettersToFill = Math.floor(this.wordToGuess.length / 3); 
+    let filledLetters = 0;
+
+    while (filledLetters < lettersToFill) {
+      const randomIndex = Math.floor(Math.random() * this.wordToGuess.length);
+      const letter = this.wordToGuess[randomIndex];
+
+      if (!this.displayedWord[randomIndex] || this.displayedWord[randomIndex] === ' ') {
+        this.guesses.push(letter);
+        this.updateDisplayedWord(letter);
+        filledLetters++;
+      }
     }
   }
 
@@ -66,8 +86,7 @@ export class GamePlayComponent implements OnInit {
       this.gameStatus = 'You Lose';
     }
 
-    
-    if (!this.displayedWord.includes('  ')) {
+    if (!this.displayedWord.includes(' ')) {
       this.gameOver = true;
       this.gameStatus = 'You Win';
     }
@@ -77,7 +96,7 @@ export class GamePlayComponent implements OnInit {
     let newDisplayedWord = '';
     for (let i = 0; i < this.wordToGuess.length; i++) {
       if (this.wordToGuess[i] === letter || this.guesses.includes(this.wordToGuess[i])) {
-        newDisplayedWord += this.wordToGuess[i] + ' ';
+        newDisplayedWord += this.wordToGuess[i];
       } else {
         newDisplayedWord += ' ';
       }
@@ -108,3 +127,4 @@ export class GamePlayComponent implements OnInit {
     this.gameOver = false;
   }
 }
+
