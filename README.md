@@ -14,21 +14,18 @@ Users are able to:
 - Navigate the entire game only using their keyboard.
 
 ## Table of Contents
-- [Demo](https://main--dictionary-web-app-hppy.netlify.app/)
-- [Features](#features)
+- [Demo](https://main--hppy-hangman.netlify.app/)
 - [Screenshoot](#screenshot)
 - [Installation](#installation)
 - [Usage](#usage)
 
 ## Demo
-You can see a live demo of the form [here]().
+You can see a live demo of the form [here](https://main--hppy-hangman.netlify.app/).
 
-## Features
-- *text input:* fill the form.
 
 ## Screenshot
 
-<!-- ![Screenshot 2024-07-01 082156](https://github.com/happyGikundiro/Password-Generator-App/assets/172483008/19f93181-d18e-4dc4-b141-557afa63f4c8) -->
+![Screenshot 2024-07-17 230929](https://github.com/user-attachments/assets/e9c0e0eb-0af3-40b3-9a63-6932ce11b00b)
 
 ## Installation
 To get a local copy up and running, follow these simple steps.
@@ -46,6 +43,7 @@ To get a local copy up and running, follow these simple steps.
 3. use ng serve to view the app.
 
 ## Usage
-1. Start selecting a category....
+1. Start selecting a category
+2. Guess a word from random generated characters
 
 
