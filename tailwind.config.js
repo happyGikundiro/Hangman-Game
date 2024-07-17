@@ -15,6 +15,8 @@ module.exports = {
           "inset 0 -1px 0 1.5px #140E66, inset 0 2px 0 0px #5DA9EF",
         "custom-button-quit":
           "inset 0 -1px 0 1.5px #140E66, inset 0 2px 0 0px purple",
+        "custom-button-play":
+          "inset 0 -6px 0 1px #140E66, inset 0 2px 0 0px purple",
       },
       backgroundImage: {
         "gradient-custom":
