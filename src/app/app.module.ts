@@ -18,7 +18,7 @@ import { HowToPlayComponent } from './pages/how-to-play/how-to-play.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
