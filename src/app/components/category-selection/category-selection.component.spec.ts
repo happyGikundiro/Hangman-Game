@@ -1,9 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { CategorySelectionComponent } from './category-selection.component';
-import { HangmanGameService } from '../../services/hangman-game.service';
-import { Category } from '../../model/model';
-import { CATEGORIES } from '../../db-data';
 
 describe('CategorySelectionComponent', () => {
   let component: CategorySelectionComponent;

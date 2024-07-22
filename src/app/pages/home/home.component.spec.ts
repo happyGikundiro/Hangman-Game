@@ -11,6 +11,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [HomeComponent],
+      providers:[{provide:Router, useValue:routerSpy}]
     })
     .compileComponents();
 

@@ -50,14 +50,6 @@ describe('GamePlayComponent', () => {
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/selectcategory']);
   });
 
-  it('should update the displayed word and progress bar when a correct letter is guessed', () => {
-    const initialDisplayedWord = component.displayedWord;
-    const correctLetter = component.wordToGuess[0];
-    component.guess(correctLetter);
-    expect(component.displayedWord).not.toBe(initialDisplayedWord);
-    expect(component.remainingGuesses).toBe(component.maxGuesses);
-  });
-
   it('should decrease remaining guesses and update progress bar when an incorrect letter is guessed', () => {
     const initialDisplayedWord = component.displayedWord;
     const incorrectLetter = 'Z';

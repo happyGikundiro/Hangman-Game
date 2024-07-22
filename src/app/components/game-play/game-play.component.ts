@@ -45,7 +45,6 @@ export class GamePlayComponent implements OnInit {
       this.guesses = [];
 
       this.displayedWord = ' '.repeat(this.wordToGuess.length);
-      console.log('don',this.wordToGuess)
 
       this.fillRandomLetters();
 
